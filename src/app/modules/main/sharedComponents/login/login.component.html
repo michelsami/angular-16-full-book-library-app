@@ -1,0 +1,30 @@
+<!-- partial:index.partial.html -->
+<div class="containerDiv">
+  <div id="bg"></div>
+  <form>
+    <div class="form-field">
+      <input
+        type="text"
+        placeholder="Username : try 'myUserName'"
+        required
+        [(ngModel)]="username"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="form-field">
+      <input
+        type="password"
+        placeholder="Password : try 'myPassword'"
+        required
+        [(ngModel)]="password"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+    <p [style.color]="error ? 'red' : 'green'">{{ message }}</p>
+    <div class="form-field">
+      <button class="btn" type="submit" (click)="login()">Log in</button>
+    </div>
+  </form>
+</div>
+<!-- partial -->

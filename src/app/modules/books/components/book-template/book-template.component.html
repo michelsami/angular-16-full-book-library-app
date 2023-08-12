@@ -1,0 +1,54 @@
+<div class="card" *ngFor="let book of books">
+  <img
+    src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+    class="card-img-top"
+    alt="Book Cover"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ book.title }}</h5>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput10"
+      placeholder="Please enter a new name"
+      [(ngModel)]="book.title"
+      *ngIf="isEditEnable"
+    />
+    <p class="card-text">Author: {{ book.author }}</p>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput20"
+      placeholder="Please enter a new Author name"
+      [(ngModel)]="book.author"
+      *ngIf="isEditEnable"
+    />
+
+    <p class="card-text">Published: {{ book.published }}</p>
+
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput10"
+      placeholder="Please enter a new published year"
+      [(ngModel)]="book.published"
+      *ngIf="isEditEnable"
+    />
+
+    <div *ngIf="adminLoggedIn == true">
+      <button
+        class="btn btn-primary"
+        *ngIf="!isEditEnable"
+        (click)="amendBook(book)"
+      >
+        Edit book
+      </button>
+      <button class="btn btn-primary" *ngIf="isEditEnable" (click)="save()">
+        Save Amendments
+      </button>
+      <button class="btn btn-danger" (click)="deleteBook(book)">
+        Delete book
+      </button>
+    </div>
+  </div>
+</div>

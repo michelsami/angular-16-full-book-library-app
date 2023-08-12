@@ -1,0 +1,124 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >
+        Add new Book
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Book title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Add a book title here"
+            [(ngModel)]="bookTitle"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput2" class="form-label"
+            >Book Author</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput2"
+            placeholder="Add a book Author here"
+            [(ngModel)]="bookAuthor"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput3" class="form-label"
+            >Book published year</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="exampleFormControlInput3"
+            placeholder="Add a book published year here"
+            [(ngModel)]="bookPublished"
+          />
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addBook()">
+        Add book
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="accordion" id="accordionExample1">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne1">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne1"
+        aria-expanded="true"
+        aria-controls="collapseOne1"
+      >
+        search and amend books
+      </button>
+    </h2>
+    <div
+      id="collapseOne1"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingOne1"
+      data-bs-parent="#accordionExample1"
+    >
+      <div class="accordion-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput10" class="form-label"
+            >Book title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput10"
+            placeholder="Add a book title here"
+            [(ngModel)]="bookTitleSearch"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput20" class="form-label"
+            >Book Author</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput20"
+            placeholder="Add a book Author here"
+            [(ngModel)]="bookAuthorSearch"
+          />
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="search()">
+        search for this book
+      </button>
+
+      <button type="button" class="btn btn-primary" (click)="getAllBooks()">
+        Back to all Books
+      </button>
+    </div>
+  </div>
+</div>
+
+<br />
+<app-book-template [books]="booksData"></app-book-template>
