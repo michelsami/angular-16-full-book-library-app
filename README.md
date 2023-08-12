@@ -1,3 +1,8 @@
+#Note 
+to be able to delete and edit please login using these credentials 
+username : a
+password : 1
+
 # BooksShop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
